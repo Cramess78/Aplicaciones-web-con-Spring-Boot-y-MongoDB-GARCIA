@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Hospitalaria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+        <div class="card p-5">
+            <h1 class="title has-text-centered">Gestión de Médicos y Especialidades</h1>
+            <p class="subtitle has-text-centered">Panel principal del hospital</p>
+
+            <div class="buttons is-centered mt-4">
+                <a class="button is-link is-light" href="/medicos">
+                    <span class="icon"><i class="fas fa-user-md"></i></span>
+                    <span>Médicos</span>
+                </a>
+                <a class="button is-info is-light" href="/especialidades">
+                    <span class="icon"><i class="fas fa-stethoscope"></i></span>
+                    <span>Especialidades</span>
+                </a>
+                <a class="button is-primary is-light" href="/turnos">
+                    <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span>Turnos</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://kit.fontawesome.com/a2d04b6c3f.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

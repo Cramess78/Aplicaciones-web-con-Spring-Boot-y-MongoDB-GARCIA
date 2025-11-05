@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Médicos disponibles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="section">
+<div th:insert="fragments/nav :: navbar"></div>
+
+<div class="level">
+    <div class="level-left">
+        <h2 class="title">Médicos disponibles</h2>
+    </div>
+    <div class="level-right">
+        <!-- Botón Volver -->
+        <a class="button" href="/especialidades">Volver</a>
+    </div>
+</div>
+
+<table class="table is-fullwidth is-striped" th:if="${medicos}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>CMP</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="m : ${medicos}">
+        <!-- MongoDB usa id -->
+        <td th:text="${m.id}"></td>
+        <td th:text="${m.nombres} + ' ' + ${m.apellidos}"></td>
+        <td th:text="${m.colegiatura}"></td>
+        <td>
+            <!-- Botón Asignar turno: pasamos medicoId, especialidadId, dia y hora -->
+            <a class="button is-primary"
+               th:href="@{'/turnos/nuevo'(medicoId=${m.id}, especialidadId=${especialidadId}, dia=${dia}, hora=${hora})}">
+                Asignar turno
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p th:if="${#lists.isEmpty(medicos)}">Sin médicos disponibles para ese momento.</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* Fondo centrado y degradado suave */
+body {
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta principal */
+.card {
+    max-width: 500px;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+/* Título */
+.title {
+    color: #3273dc;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.subtitle {
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+}
+
+/* Botones */
+.buttons a {
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

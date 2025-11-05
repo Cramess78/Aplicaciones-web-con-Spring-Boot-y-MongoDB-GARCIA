@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Horario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8fafc; }
+        .card { border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .form-control, .form-select { border-radius: 0.5rem; }
+        .btn-primary { border-radius: 0.5rem; background: linear-gradient(90deg, #0d6efd, #3b82f6); border: none; }
+        .btn-primary:hover { background: linear-gradient(90deg, #0b5ed7, #2563eb); }
+        .btn-secondary { border-radius: 0.5rem; }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+<div class="card p-5 shadow-sm" style="max-width: 450px; width: 100%;">
+    <h3 class="text-center mb-4 text-primary fw-bold">Agregar Horario al Médico</h3>
+
+    <!-- Formulario solo si medico existe -->
+    <form th:if="${medico != null}" th:action="@{'/medicos/' + ${medico.id} + '/horario'}" method="post">
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Día</label>
+            <select name="dia" class="form-select" required>
+                <option>MONDAY</option>
+                <option>TUESDAY</option>
+                <option>WEDNESDAY</option>
+                <option>THURSDAY</option>
+                <option>FRIDAY</option>
+                <option>SATURDAY</option>
+                <option>SUNDAY</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Inicio (HH:MM)</label>
+            <input type="time" name="inicio" class="form-control" placeholder="08:00" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Fin (HH:MM)</label>
+            <input type="time" name="fin" class="form-control" placeholder="12:00" required>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="submit" class="btn btn-primary px-4">Guardar</button>
+            <a href="/medicos" class="btn btn-secondary px-4">Cancelar</a>
+        </div>
+    </form>
+
+    <!-- Mensaje si medico es null -->
+    <p th:if="${medico == null}" class="text-danger text-center fw-semibold mt-3">
+        Médico no encontrado.
+    </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

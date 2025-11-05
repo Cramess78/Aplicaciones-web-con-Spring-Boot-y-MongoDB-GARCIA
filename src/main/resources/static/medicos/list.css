@@ -1,0 +1,92 @@
+/* Fondo tipo iOS con gradiente y efecto blur */
+.ios-bg {
+    background: linear-gradient(135deg, #f5f7fa, #dce9f9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta principal */
+.ios-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 95%;
+    max-width: 900px;
+}
+
+/* Título */
+.title {
+    font-weight: 700;
+    color: #1d1d1f;
+}
+
+/* Botón principal (turquesa) */
+.ios-button {
+    background: rgba(48, 176, 199, 0.9);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(48, 176, 199, 0.35);
+}
+.ios-button:hover {
+    background: rgba(48, 176, 199, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(48, 176, 199, 0.5);
+}
+
+/* Botón secundario (púrpura suave) */
+.ios-button-secondary {
+    background: rgba(175, 82, 222, 0.9);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 8px rgba(175, 82, 222, 0.35);
+}
+.ios-button-secondary:hover {
+    background: rgba(175, 82, 222, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(175, 82, 222, 0.5);
+}
+
+/* Botón alternativo (coral, opcional) */
+.ios-button-alt {
+    background: rgba(255, 111, 97, 0.9);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(255, 111, 97, 0.35);
+    transition: all 0.25s ease;
+}
+.ios-button-alt:hover {
+    background: rgba(255, 111, 97, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 111, 97, 0.5);
+}
+
+/* Tabla con bordes suaves */
+.ios-table {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ios-table th {
+    background: rgba(240, 240, 245, 0.9);
+    color: #1d1d1f;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ios-table td {
+    text-align: center;
+    color: #333;
+    vertical-align: middle;
+}
+
+.ios-table tr:hover {
+    background: rgba(240, 240, 240, 0.7);
+}
